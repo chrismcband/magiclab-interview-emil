@@ -12,5 +12,10 @@ export const getTweetsByID = (after: number) =>
     params: { afterId: after, count: 10 }
   }).then(res => res.data);
 
+export const getTweetsBeforeID = (before: number) =>
+  fetch(`${url}/api`, "GET", undefined, {
+    params: { beforeId: before, count: 10 }
+  }).then(res => res.data);
+
 export const getReset = () =>
   fetch(`${url}/reset`, "GET", undefined, undefined).then(res => res.data);
